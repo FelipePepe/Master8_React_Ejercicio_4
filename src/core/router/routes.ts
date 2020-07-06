@@ -1,17 +1,17 @@
 import { generatePath } from 'react-router-dom';
 
 interface SwitchRoutes {
-    root: string;
-    login: string;
-    images: string;
-    cart: string;
+  root: string;
+  login: string;
+  images: string;
+  cart: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
-    root: '/',
-    login: '/login',
-    images: '/imagesShop',
-    cart: '/cart',
+  root: '/',
+  login: '/login',
+  images: '/imagesShop',
+  cart: '/cart',
 };
 
 // interface Routes extends Omit<SwitchRoutes, 'editEmployee'> {
@@ -24,5 +24,5 @@ export const switchRoutes: SwitchRoutes = {
 // };
 
 export const routes = {
-    ...switchRoutes
+  ...switchRoutes
 }
