@@ -12,7 +12,13 @@
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "baseUrl": "./src/"
+    "baseUrl": "./src/",
+    "paths": {
+      "common": ["common"],
+      "core": ["core"],
+      "scenes": ["scenes"],
+      "pods": ["pods"]
+    }
   },
   "include": ["./src/**/*", "./config/test/setup.ts", "./global.types.d.ts"]
 }

@@ -1,5 +1,6 @@
 import React from 'react';
+import { LoginContainer } from 'pods/login';
 
 export const LoginScene = () => {
-  return <h1>Hello from LoginScene</h1>;
+  return <LoginContainer />;
 };
