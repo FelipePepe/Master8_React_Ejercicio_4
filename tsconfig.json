@@ -5,20 +5,14 @@
     "moduleResolution": "node",
     "declaration": false,
     "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "jsx": "react",
     "noLib": false,
-    "allowJs": true,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "baseUrl": "./src/",
-    "paths": {
-      "common": ["common"],
-      "core": ["core"],
-      "scenes": ["scenes"],
-      "pods": ["pods"]
-    }
+    "esModuleInterop": true
   },
-  "include": ["./src/**/*", "./config/test/setup.ts", "./global.types.d.ts"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

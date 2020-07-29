@@ -1,9 +1,5 @@
-import React from 'react';
-import { hot } from 'react-hot-loader/root';
-import { LoginScene } from 'scenes';
+import React from "react";
 
-const App: React.FunctionComponent = () => {
-  return <LoginScene />;
+export const App = () => {
+  return <h1>Hello React !!</h1>;
 };
-
-export default hot(App);
