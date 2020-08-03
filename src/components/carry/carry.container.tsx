@@ -7,6 +7,8 @@ import { ImageContext, ImageContextSession } from "../image";
 
 const mybackground = css`
   background-color: lightpink;
+  padding: 10px;
+  height: 85vh;
 `;
 
 export const CarryContainer: React.FC = () => {
@@ -15,10 +17,18 @@ export const CarryContainer: React.FC = () => {
 
   const context = React.useContext<ImageContextSession>(ImageContext);
 
+  const DeleteImage = (images: Image[], id: number): Image[] => {
+    const imagesResult: Image[] = images.filter((value, index, arr) => {
+      return value.id != id;
+    });
+
+    return imagesResult;
+  };
+
   const convertImageContextToImage = (
     imageContext: ImageContextSession
   ): Image => {
-    if (imageContext.buy) {
+    if (imageContext) {
       const myImage: Image = {
         buy: imageContext.buy,
         description: imageContext.description,
@@ -36,18 +46,22 @@ export const CarryContainer: React.FC = () => {
   React.useEffect(() => {
     const imageToBuy: Image = convertImageContextToImage(context);
 
-    if (imageToBuy) {
+    if (imageToBuy.buy) {
       setImages([...images, imageToBuy]);
+    } else {
+      setImages(DeleteImage([...images], imageToBuy.id));
     }
   }, [context]);
 
   React.useEffect(() => {
     images.map((image) => {
-      if (image.buy) {
+      if (image.id === context.id && context.buy) {
         setTotal(total + image.price);
+      } else if (image.id === context.id && !context.buy) {
+        setTotal(total - image.price);
       }
     });
-  }, [images]);
+  }, [context, images]);
 
   return (
     <>

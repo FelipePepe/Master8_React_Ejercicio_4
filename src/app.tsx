@@ -1,6 +1,6 @@
 import React from "react";
-import { PrincipalContainer } from "./components";
+import { RouterComponent } from "./components";
 
 export const App: React.FC = () => {
-  return <PrincipalContainer />;
+  return <RouterComponent />;
 };
