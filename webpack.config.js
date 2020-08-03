@@ -8,7 +8,7 @@ module.exports = {
     extensions: [".js", ".ts", ".tsx"],
   },
   entry: {
-    app: ["./index.tsx"],
+    app: ["regenerator-runtime/runtime", "./index.tsx"],
   },
   devtool: "eval-source-map",
   stats: "errors-only",
@@ -25,7 +25,7 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         exclude: /node_modules/,
-        loader: "url-loader?limit=5000",
+        loader: "url-loader",
       },
       {
         test: /\.html$/,

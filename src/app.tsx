@@ -1,5 +1,12 @@
 import React from "react";
+import { PrincipalContainer } from "./components";
 
-export const App = () => {
-  return <h1>Hello React !!</h1>;
+import { Image } from "./components/imageList/api/image-list.api.model";
+
+interface Props {
+  ImageCollection: Image[];
+}
+
+export const App: React.FC = () => {
+  return <PrincipalContainer />;
 };
