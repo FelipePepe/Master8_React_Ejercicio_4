@@ -40,31 +40,31 @@ export const mockImagesCats: Image[] = [{
 export const mockImagesKities: Image[] = [{
     id: 1,
     description: 'kitie 1',
-    imagePath: '',
-    price: 12.1
+    imagePath: 'https://felipepepe.github.io/pictures/kities/kities1.jpg',
+    price: 12.11
 }, {
     id: 2,
     description: 'kitie 2',
-    imagePath: '',
-    price: 12.2
+    imagePath: 'https://felipepepe.github.io/pictures/kities/kities2.jpg',
+    price: 12.22
 }, {
     id: 3,
     description: 'kitie 3',
-    imagePath: '',
-    price: 12.3
+    imagePath: 'https://felipepepe.github.io/pictures/kities/kities3.jpg',
+    price: 12.33
 }, {
     id: 4,
     description: 'kitie 4',
-    imagePath: '',
-    price: 12.4
+    imagePath: 'https://felipepepe.github.io/pictures/kities/kities4.jpg',
+    price: 12.44
 }, {
     id: 5,
     description: 'kitie 5',
-    imagePath: '',
-    price: 12.5
+    imagePath: 'https://felipepepe.github.io/pictures/kities/kities5.jpg',
+    price: 12.55
 }, {
     id: 6,
     description: 'kitie 6',
-    imagePath: '',
-    price: 12.6
+    imagePath: 'https://felipepepe.github.io/pictures/kities/kities6.jpg',
+    price: 12.66
 }]

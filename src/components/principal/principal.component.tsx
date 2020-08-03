@@ -13,7 +13,7 @@ interface Props {
 
 const principalStyle = css`
   display: grid;
-  grid-template-columns: auto 420px;
+  grid-template-columns: auto 320px;
 `;
 
 export const PrincipalComponent: React.FC<Props> = (props) => {
