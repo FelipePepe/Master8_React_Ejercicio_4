@@ -16,5 +16,5 @@ interface Routes extends Omit<SwitchRoutes, 'cats'> {
 
 export const routes: Routes = {
     ...switchRoutes,
-    cats: id => generatePath(switchRoutes.root, { id }),
+    cats: id => generatePath(switchRoutes.cats, { id }),
 };
