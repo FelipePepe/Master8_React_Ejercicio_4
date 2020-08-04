@@ -2,17 +2,19 @@ import { generatePath } from 'react-router-dom';
 
 interface SwitchRoutes {
     root: string;
+    cats: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
-    root: '/:id',
+    root: '/',
+    cats: '/:id',
 };
 
-interface Routes extends Omit<SwitchRoutes, 'root'> {
-    root: (id: string) => string;
+interface Routes extends Omit<SwitchRoutes, 'cats'> {
+    cats: (id: string) => string;
 }
 
 export const routes: Routes = {
     ...switchRoutes,
-    root: id => generatePath(switchRoutes.root, { id }),
+    cats: id => generatePath(switchRoutes.root, { id }),
 };

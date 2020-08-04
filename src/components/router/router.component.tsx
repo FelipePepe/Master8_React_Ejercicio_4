@@ -10,7 +10,12 @@ export const RouterComponent = () => {
         <Switch>
           <Route
             exact={true}
-            path={[switchRoutes.root]}
+            path={[switchRoutes.root, switchRoutes.cats]}
+            component={PrincipalContainer}
+          />
+          <Router
+            exact={true}
+            path={switchRoutes.cats}
             component={PrincipalContainer}
           />
         </Switch>

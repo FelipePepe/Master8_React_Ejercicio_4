@@ -14,7 +14,7 @@ export const PrincipalContainer: React.FC = () => {
 
   const onLoadImageList = async () => {
     const apiImageList =
-      (server && server.id) == "kities"
+      server && server.id == "kities"
         ? await getKitiesCollection()
         : await getCatsCollection();
     const viewModelImageList = mapImageListFromApiToVM(apiImageList);
@@ -30,7 +30,8 @@ export const PrincipalContainer: React.FC = () => {
   };
 
   const handleChangeImages = (id: string) => {
-    history.push(routes.root(id));
+    console.log(routes.cats(id));
+    history.push(routes.cats(id));
   };
 
   return (
