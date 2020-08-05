@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { PrincipalComponent } from "./principal.component";
 import { Image } from "../imagelist/image-list.vm";
 import { getCatsCollection, getKitiesCollection } from "../imageList/api";
@@ -25,12 +26,7 @@ export const PrincipalContainer: React.FC = () => {
     onLoadImageList();
   }, []);
 
-  const handleBuyImage = (image: Image) => {
-    console.log(image.description);
-  };
-
   const handleChangeImages = (id: string) => {
-    console.log(routes.cats(id));
     history.push(routes.cats(id));
   };
 
@@ -41,14 +37,14 @@ export const PrincipalContainer: React.FC = () => {
           handleChangeImages("cats")
         }
       >
-        <div>Cats</div>
+        Cats
       </IconButton>
       <IconButton
         onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
           handleChangeImages("kities")
         }
       >
-        <div>Kities</div>
+        Kities
       </IconButton>
       <PrincipalComponent ImageCollection={images} />
     </div>
