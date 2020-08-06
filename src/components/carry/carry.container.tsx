@@ -25,6 +25,13 @@ export const CarryContainer: React.FC = () => {
     return imagesResult;
   };
 
+  const HandleDeleteImage = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    idImage: number
+  ): void => {
+    setImages(DeleteImage(images, idImage));
+  };
+
   const convertImageContextToImage = (
     imageContext: ImageContextSession
   ): Image => {
@@ -66,7 +73,11 @@ export const CarryContainer: React.FC = () => {
   return (
     <>
       <div className={mybackground}>
-        <CarryComponent ImageCollection={images} Total={total} />
+        <CarryComponent
+          ImageCollection={images}
+          Total={total}
+          OnDeleteImage={HandleDeleteImage}
+        />
       </div>
     </>
   );

@@ -10,13 +10,19 @@ import {
   TableCell,
   TableBody,
   makeStyles,
+  IconButton,
+  Button,
 } from "@material-ui/core";
 
-import { ShoppingCartTwoTone } from "@material-ui/icons";
+import { ShoppingCartTwoTone, DeleteTwoTone } from "@material-ui/icons";
 
 interface Props {
   ImageCollection: Image[];
   Total: Number;
+  OnDeleteImage: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    idImage: number
+  ) => void;
 }
 
 const useStyles = makeStyles({
@@ -28,6 +34,7 @@ const useStyles = makeStyles({
 export const CarryComponent: React.FC<Props> = (props) => {
   const imageCollection = props.ImageCollection;
   const total = props.Total;
+  const deleteImage = props.OnDeleteImage;
 
   const classes = useStyles();
 
@@ -44,6 +51,7 @@ export const CarryComponent: React.FC<Props> = (props) => {
             <TableRow>
               <TableCell colSpan={3}>Description</TableCell>
               <TableCell align="right">Price</TableCell>
+              <TableCell align="right">Remove</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -51,6 +59,16 @@ export const CarryComponent: React.FC<Props> = (props) => {
               <TableRow key={row.id}>
                 <TableCell colSpan={3}>{row.description}</TableCell>
                 <TableCell align="right">{row.price}</TableCell>
+                <TableCell>
+                  <IconButton
+                    aria-label="delete"
+                    onClick={(e) => {
+                      deleteImage(e, row.id);
+                    }}
+                  >
+                    <DeleteTwoTone fontSize="small" />
+                  </IconButton>
+                </TableCell>
               </TableRow>
             ))}
             <TableRow>
