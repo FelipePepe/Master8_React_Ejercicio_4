@@ -8,9 +8,5 @@ interface Props {
 
 export const ImageListContainer: React.FC<Props> = (props) => {
   const images = props.ImageCollection;
-  return (
-    <div>
-      <ImageListComponent ImageCollection={images} />
-    </div>
-  );
+  return <ImageListComponent ImageCollection={images} />;
 };
