@@ -29,6 +29,8 @@ export const CarryContainer: React.FC = () => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     idImage: number
   ): void => {
+    const image: Image = images.find((image) => image.id === idImage);
+    setTotal(total - image.price);
     setImages(DeleteImage(images, idImage));
   };
 
