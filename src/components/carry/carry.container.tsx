@@ -4,6 +4,7 @@ import { css } from "emotion";
 import { CarryComponent } from "./carry.component";
 
 import { ImageContext, ImageContextSession } from "../image";
+import { VideoLabelRounded } from "@material-ui/icons";
 
 const mybackground = css`
   background-color: lightpink;
@@ -15,9 +16,11 @@ export const CarryContainer: React.FC = () => {
   const [images, setImages] = React.useState<Image[]>([]);
   const [total, setTotal] = React.useState<number>(0);
 
+  const { setImage } = React.useContext(ImageContext);
+
   const context = React.useContext<ImageContextSession>(ImageContext);
 
-  const DeleteImage = (images: Image[], id: number): Image[] => {
+  const RemoveImage = (images: Image[], id: number): Image[] => {
     const imagesResult: Image[] = images.filter((value, index, arr) => {
       return value.id != id;
     });
@@ -31,7 +34,8 @@ export const CarryContainer: React.FC = () => {
   ): void => {
     const image: Image = images.find((image) => image.id === idImage);
     setTotal(total - image.price);
-    setImages(DeleteImage(images, idImage));
+    setImage(image);
+    setImages(RemoveImage(images, idImage));
   };
 
   const convertImageContextToImage = (
@@ -58,7 +62,7 @@ export const CarryContainer: React.FC = () => {
     if (imageToBuy.buy) {
       setImages([...images, imageToBuy]);
     } else {
-      setImages(DeleteImage([...images], imageToBuy.id));
+      setImages(RemoveImage([...images], imageToBuy.id));
     }
   }, [context]);
 
