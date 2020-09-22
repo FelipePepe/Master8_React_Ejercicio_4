@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { PrincipalComponent } from "./principal.component";
-import { Image } from "../imagelist/image-list.vm";
+import { Image } from "../imageList";
 import { getCatsCollection, getKitiesCollection } from "../imageList/api";
 import { mapImageListFromApiToVM } from "../imageList/image-list.mapper";
 import AppBar from "@material-ui/core/AppBar";
@@ -43,6 +43,7 @@ export const PrincipalContainer: React.FC = () => {
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
   };
+  
   const onLoadImageList = async (server: string) => {
     const apiImageList =
       server == "kities"

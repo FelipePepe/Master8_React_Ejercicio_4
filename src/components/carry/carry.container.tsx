@@ -32,10 +32,10 @@ export const CarryContainer: React.FC = () => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     idImage: number
   ): void => {
-    const image: Image = images.find((image) => image.id === idImage);
-    setTotal(total - image.price);
-    setImage(image);
-    setImages(RemoveImage(images, idImage));
+    // const image: Image = images.find((image) => image.id === idImage);
+    // setTotal(total - image.price);
+    // setImage(image);
+    // setImages(RemoveImage(images, idImage));
   };
 
   const convertImageContextToImage = (
