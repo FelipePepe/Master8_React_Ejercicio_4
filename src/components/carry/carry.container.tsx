@@ -7,7 +7,7 @@ import { ImageContext, ImageContextSession } from "../image";
 import { VideoLabelRounded } from "@material-ui/icons";
 
 const mybackground = css`
-  background-color: lightpink;
+  background-color: #3f51b5;
   padding: 10px;
   height: 85vh;
 `;
@@ -32,10 +32,10 @@ export const CarryContainer: React.FC = () => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     idImage: number
   ): void => {
-    // const image: Image = images.find((image) => image.id === idImage);
-    // setTotal(total - image.price);
-    // setImage(image);
-    // setImages(RemoveImage(images, idImage));
+    const image: Image = images.find((image) => image.id === idImage);
+    setTotal(total - image.price);
+    setImage(image);
+    setImages(RemoveImage(images, idImage));
   };
 
   const convertImageContextToImage = (

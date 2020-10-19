@@ -59,9 +59,9 @@ export const ImageComponent: React.FC<Props> = (props) => {
             <Typography gutterBottom variant="h6" component="h2">
               {currentImage.description}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="span"> 
+            <Typography variant="body2" color="textSecondary" component="span">
               {currentImage.price.toFixed(2)} €
-            </Typography> */}
+            </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>

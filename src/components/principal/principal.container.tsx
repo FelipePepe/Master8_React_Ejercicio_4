@@ -43,7 +43,7 @@ export const PrincipalContainer: React.FC = () => {
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
   };
-  
+
   const onLoadImageList = async (server: string) => {
     const apiImageList =
       server == "kities"
