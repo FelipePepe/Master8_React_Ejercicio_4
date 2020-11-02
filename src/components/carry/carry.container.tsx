@@ -33,6 +33,7 @@ export const CarryContainer: React.FC = () => {
     idImage: number
   ): void => {
     const image: Image = images.find((image) => image.id === idImage);
+    image.buy = false;
     setTotal(total - image.price);
     setImage(image);
     setImages(RemoveImage(images, idImage));

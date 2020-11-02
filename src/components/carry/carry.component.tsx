@@ -29,6 +29,9 @@ const useStyles = makeStyles({
   table: {
     minWidth: 120,
   },
+  text_white: {
+    color: "#FFFFFF",
+  },
 });
 
 export const CarryComponent: React.FC<Props> = (props) => {
@@ -40,7 +43,7 @@ export const CarryComponent: React.FC<Props> = (props) => {
 
   return (
     <>
-      <h3>
+      <h3 className={classes.text_white}>
         <ShoppingCartTwoTone />
         &nbsp;&nbsp;Shopping Cart
       </h3>
@@ -58,17 +61,19 @@ export const CarryComponent: React.FC<Props> = (props) => {
             {imageCollection.map((row) => (
               <TableRow key={row.id}>
                 <TableCell colSpan={3}>{row.description}</TableCell>
-                <TableCell align="right">{row.price}</TableCell>
-                <TableCell>
-                  <IconButton
-                    aria-label="delete"
-                    onClick={(e) => {
-                      deleteImage(e, row.id);
-                    }}
-                  >
-                    <DeleteTwoTone fontSize="small" />
-                  </IconButton>
-                </TableCell>
+                <TableCell align="right">{row.price.toFixed(2)}</TableCell>
+                {
+                  <TableCell>
+                    <IconButton
+                      aria-label="delete"
+                      onClick={(e) => {
+                        deleteImage(e, row.id);
+                      }}
+                    >
+                      <DeleteTwoTone fontSize="small" />
+                    </IconButton>
+                  </TableCell>
+                }
               </TableRow>
             ))}
             <TableRow>
