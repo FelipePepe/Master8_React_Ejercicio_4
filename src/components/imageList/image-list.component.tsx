@@ -20,10 +20,10 @@ export const ImageListComponent: React.FC<Props> = (props) => {
   const imageCollection = props.ImageCollection;
 
   return (
-    <div className={styleImageContainer}>
+    <p className={styleImageContainer}>
       {imageCollection.map((image) => (
         <ImageContainer DataImage={image} key={image.id} />
       ))}
-    </div>
+    </p>
   );
 };

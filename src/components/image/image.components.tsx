@@ -47,34 +47,36 @@ export const ImageComponent: React.FC<Props> = (props) => {
   };
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={currentImage.image}
-          title={currentImage.description}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h6" component="h2">
-            {currentImage.description}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {currentImage.price} €
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Checkbox
-          checked={currentImage.buy}
-          color="primary"
-          inputProps={{ "aria-label": "primary checkbox" }}
-          onChange={(
-            e: React.ChangeEvent<HTMLInputElement>,
-            checked: boolean
-          ) => handleBuyChangeValue(e, checked)}
-        />
-        Buy
-      </CardActions>
-    </Card>
+    <div>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={currentImage.image}
+            title={currentImage.description}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="h2">
+              {currentImage.description}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="span">
+              {currentImage.price.toFixed(2)} €
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Checkbox
+            checked={currentImage.buy}
+            color="primary"
+            inputProps={{ "aria-label": "primary checkbox" }}
+            onChange={(
+              e: React.ChangeEvent<HTMLInputElement>,
+              checked: boolean
+            ) => handleBuyChangeValue(e, checked)}
+          />
+          Buy
+        </CardActions>
+      </Card>
+    </div>
   );
 };

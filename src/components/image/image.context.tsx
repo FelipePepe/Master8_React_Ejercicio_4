@@ -5,7 +5,9 @@ export interface ImageContextSession extends Image {
   setImage: (image: Image) => void;
 }
 
-export const ImageContext = React.createContext<ImageContextSession>({
+export const ImageContext: React.Context<ImageContextSession> = React.createContext<
+  ImageContextSession
+>({
   id: null,
   buy: null,
   description: "",
